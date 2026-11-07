@@ -1,0 +1,24 @@
+{
+  "name": "@micro-learn/auth",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@better-auth/core": "1.7.12",
+    "@better-auth/drizzle-adapter": "1.7.12",
+    "@better-auth/expo": "catalog:",
+    "@micro-learn/db": "workspace:*",
+    "better-auth": "catalog:",
+    "drizzle-orm": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@micro-learn/config": "workspace:*",
+    "typescript": "^6.0.3"
+  }
+}

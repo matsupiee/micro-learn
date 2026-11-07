@@ -1,0 +1,3 @@
+{
+  "extends": "@micro-learn/config/tsconfig.base.json"
+}

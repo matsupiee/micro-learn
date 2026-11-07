@@ -1,0 +1,6 @@
+{
+  "extends": "@micro-learn/config/tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true
+  }
+}
