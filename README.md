@@ -104,3 +104,11 @@ micro-learn/
 - `bun run dev:native`: Start the React Native/Expo development server
 - `bun run db:generate`: Generate database client/types
 - `bun run check`: Run Oxlint and Oxfmt
+
+## 録画版の学習アプリ
+
+`cd apps/native && bun run ios` で iOS 版、同じディレクトリの `bun run web` でブラウザー版を起動できます。初回は Get Started → Continue as guest から開始できます。読書履歴・興味・保存した要点は端末内に記録されます。メールでサインインする場合はサーバーの Resend 設定として OTP_EMAIL_API_KEY と OTP_EMAIL_FROM（認証済み送信元）が必要です。決済画面は課金の発生しない購入プレビューです。
+
+`bun packages/db/src/seed/learn.ts finished` はストーリーテスト用の端末データを JSON で出力します。引数は new、home、finished から選択できます。Web 版では localStorage の learn.profile.v1 に設定して再読み込みします。
+
+iOS シミュレーターで StoreKit の購入ダイアログを試す場合は、iOS プロジェクト生成後に `cd apps/native && python3 storekit/scheme.py` を実行し、Xcode で Learn-StoreKit スキームを選択してください。ローカル商品は年額13,000円・初回1週間無料に設定しています。

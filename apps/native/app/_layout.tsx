@@ -1,38 +1,15 @@
-import "@/global.css";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { useFonts } from "expo-font";
+import { Lexend_400Regular } from "@expo-google-fonts/lexend/400Regular";
+import { Lexend_700Bold } from "@expo-google-fonts/lexend/700Bold";
 import { Stack } from "expo-router";
-import { HeroUINativeProvider } from "heroui-native";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { KeyboardProvider } from "react-native-keyboard-controller";
-
-import { AppThemeProvider } from "@/contexts/app-theme-context";
-import { queryClient } from "@/utils/trpc";
-
-export const unstable_settings = {
-  anchor: "(drawer)",
-};
-
-function StackLayout() {
-  return (
-    <Stack screenOptions={{}}>
-      <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-      <Stack.Screen name="modal" options={{ title: "Modal", presentation: "modal" }} />
-    </Stack>
-  );
-}
-
+import { StatusBar } from "expo-status-bar";
 export default function Layout() {
+  const [loaded, error] = useFonts({ Lexend_400Regular, Lexend_700Bold });
+  if (!loaded && !error) return null;
   return (
-    <QueryClientProvider client={queryClient}>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <KeyboardProvider>
-          <AppThemeProvider>
-            <HeroUINativeProvider>
-              <StackLayout />
-            </HeroUINativeProvider>
-          </AppThemeProvider>
-        </KeyboardProvider>
-      </GestureHandlerRootView>
-    </QueryClientProvider>
+    <>
+      <StatusBar style="auto" />
+      <Stack screenOptions={{ headerShown: false }} />
+    </>
   );
 }

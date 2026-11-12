@@ -1,5 +1,6 @@
 import * as Cloudflare from "@alchemy.run/cloudflare";
 import * as Alchemy from "alchemy";
+import * as Redacted from "effect/Redacted";
 import * as Config from "effect/Config";
 import * as Effect from "effect/Effect";
 import "varlock/auto-load";
@@ -15,6 +16,10 @@ export const server = Cloudflare.Worker("server", {
   },
   env: {
     DB: db,
+    OTP_EMAIL_API_KEY: Config.Redacted("OTP_EMAIL_API_KEY").pipe(
+      Config.withDefault(Redacted.make("")),
+    ),
+    OTP_EMAIL_FROM: Config.String("OTP_EMAIL_FROM").pipe(Config.withDefault("")),
     CORS_ORIGIN: Config.String("CORS_ORIGIN"),
     BETTER_AUTH_SECRET: Config.Redacted("BETTER_AUTH_SECRET"),
     BETTER_AUTH_URL: Cloudflare.Worker.URL,

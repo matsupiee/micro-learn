@@ -1,3 +1,4 @@
+import { emailOTPClient } from "better-auth/client/plugins";
 import { expoClient } from "@better-auth/expo/client";
 import { createAuthClient } from "better-auth/react";
 import Constants from "expo-constants";
@@ -8,6 +9,7 @@ import { ENV } from "../src/env";
 export const authClient = createAuthClient({
   baseURL: ENV.EXPO_PUBLIC_SERVER_URL,
   plugins: [
+    emailOTPClient(),
     expoClient({
       scheme: Constants.expoConfig?.scheme as string,
       storagePrefix: Constants.expoConfig?.scheme as string,

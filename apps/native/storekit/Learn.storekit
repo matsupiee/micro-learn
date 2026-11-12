@@ -1,0 +1,48 @@
+{
+  "identifier": "e502208e-9347-4909-adcb-e8efbfcc7f69",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {
+    "_locale": "ja",
+    "_storefront": "JPN"
+  },
+  "subscriptionGroups": [
+    {
+      "id": "4ebc85d9-b59c-48eb-85a0-e09f06f5b2e1",
+      "localizations": [],
+      "name": "Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "13000",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "63a1188b-7a9f-48ff-97b2-37861284ea58",
+          "introductoryOffer": {
+            "internalID": "d6611963-b3d4-4a06-b0bc-10ffee79c82e",
+            "numberOfPeriods": 1,
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "localizations": [
+            {
+              "locale": "ja",
+              "displayName": "Pro Yearly Subscription",
+              "description": "7日間の無料トライアル"
+            }
+          ],
+          "productID": "learn.local.preview.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Pro Yearly Subscription",
+          "subscriptionGroupID": "4ebc85d9-b59c-48eb-85a0-e09f06f5b2e1",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

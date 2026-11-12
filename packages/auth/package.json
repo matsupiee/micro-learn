@@ -6,7 +6,8 @@
     "./*": "./src/*.ts"
   },
   "scripts": {
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "test": "bun run --cwd ../db db:generate && bun test tests/otp.test.mjs"
   },
   "dependencies": {
     "@better-auth/core": "1.7.12",
